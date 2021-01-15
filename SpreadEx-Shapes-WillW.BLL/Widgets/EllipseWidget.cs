@@ -14,8 +14,8 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
         public EllipseWidget(Point location, int horizontalDiameter, int verticleDiameter)
         {
             Location = location;
-            HorizontalDiameter = horizontalDiameter;
-            VerticleDiameter = verticleDiameter;
+            HorizontalDiameter = GetUnitAndCheckPositive(horizontalDiameter, nameof(horizontalDiameter));
+            VerticleDiameter = GetUnitAndCheckPositive(verticleDiameter, nameof(verticleDiameter));
         }
     }
 }

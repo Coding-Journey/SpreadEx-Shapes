@@ -14,8 +14,8 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
         public RectangleWidget(Point location, int width, int height)
         {
             Location = location;
-            Width = width;
-            Height = height;
+            Width = GetUnitAndCheckPositive(width, nameof(width));
+            Height = GetUnitAndCheckPositive(height, nameof(height));
         }
 
     }

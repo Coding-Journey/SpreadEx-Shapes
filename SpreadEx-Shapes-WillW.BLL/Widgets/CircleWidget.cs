@@ -13,7 +13,7 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
         public CircleWidget(Point location, int size)
         {
             Location = location;
-            Size = size;
+            Size = GetUnitAndCheckPositive(size, nameof(size));
         }
     }
 }
