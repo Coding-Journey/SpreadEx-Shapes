@@ -4,6 +4,11 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>SpreadEx_Shapes_WillW</RootNamespace>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpreadEx-Shapes-WillW.BLL\Shapes.BLL.csproj" />
+  </ItemGroup>
 
 </Project>
