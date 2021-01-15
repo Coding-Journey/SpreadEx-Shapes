@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 
 namespace SpreadEx_Shapes_WillW.BLL.Widgets
@@ -24,31 +23,29 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
             _textboxWidgets = new List<TextboxWidget>();
         }
 
-        public void AddSquareWidget(Point location, int size)
+        public void AddWidget(WidgetBaseClass widget)
         {
-            _squareWidgets.Add(new SquareWidget { Location = location, Size = size } );
+            switch(widget)
+            {
+                case TextboxWidget textboxWidget:
+                    _textboxWidgets.Add(textboxWidget);
+                    break;
+                case RectangleWidget rectangleWidget:
+                    _rectangleWidgets.Add(rectangleWidget);
+                    break;
+                case SquareWidget squareWidget:
+                    _squareWidgets.Add(squareWidget);
+                    break;
+                case EllipseWidget ellipseWidget:
+                    _ellipseWidgets.Add(ellipseWidget);
+                    break;
+                case CircleWidget circleWidget:
+                    _circleWidgets.Add(circleWidget);
+                    break;          
+                default:
+                    throw new KeyNotFoundException($"Specified Type: {widget.Type} is not in the acceptable lists of widgets");
+            }
         }
-
-        public void AddRectangleWidget(Point location, int width, int height)
-        {
-            _rectangleWidgets.Add(new RectangleWidget { Location = location, Width = width, Height = height });
-        }
-
-        public void AddEllipseWidget(Point location, int horizontalDiameter, int verticleDiameter)
-        {
-            _ellipseWidgets.Add(new EllipseWidget { Location = location, HorizontalDiameter = horizontalDiameter, VerticleDiameter = verticleDiameter});
-        }
-
-        public void AddCircleWidget(Point location, int size)
-        {
-            _circleWidgets.Add(new CircleWidget { Location = location, Size = size});
-        }
-
-        public void AddTextboxWidget(Point location, int width, int height, string text)
-        {
-            _textboxWidgets.Add(new TextboxWidget { Location = location, Width = width, Height = height, Text = text });
-        }
-
         public List<string> GetDescriptions()
         {
             //gotta be a better way, too prone to not including it here

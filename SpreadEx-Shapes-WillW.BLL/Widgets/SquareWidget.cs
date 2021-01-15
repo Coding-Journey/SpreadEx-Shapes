@@ -10,5 +10,10 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
         public int Size { get; set; }
         public override Func<string> GetDescription => () => $"{Type} {GetLocationString()} size={Size}";
 
+        public SquareWidget(Point location, int size)
+        {
+            Location = location;
+            Size = size;
+        }
     }
 }

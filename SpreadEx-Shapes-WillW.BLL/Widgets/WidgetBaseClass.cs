@@ -14,6 +14,7 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
 
     public abstract class WidgetBaseClass
     {
+        public int PositionId { get; set; }
         public virtual WidgetType Type { get; set; }
         public virtual Point Location { get; set; }
         public virtual Func<string> GetDescription { get; set; }

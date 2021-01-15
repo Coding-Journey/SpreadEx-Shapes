@@ -11,5 +11,12 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
         public override Point Location { get; set; }
         public override Func<string> GetDescription => () => $"{Type} {GetLocationString()} width={Width} height={Height}";
 
+        public RectangleWidget(Point location, int width, int height)
+        {
+            Location = location;
+            Width = width;
+            Height = height;
+        }
+
     }
 }
