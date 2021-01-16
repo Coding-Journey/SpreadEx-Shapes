@@ -5,11 +5,11 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
 {
     public class WidgetCollection
     {
-        private IList<GenericWidget> _genericWidgets;
+        public IList<GenericWidget> GenericWidgets;
 
         public WidgetCollection()
         {
-            _genericWidgets = new List<GenericWidget>();
+            GenericWidgets = new List<GenericWidget>();
         }
 
         public void AddWidget(WidgetBaseClass widget)
@@ -17,19 +17,19 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
             switch(widget)
             {
                 case TextboxWidget textboxWidget:
-                    _genericWidgets.Add(new GenericWidget(textboxWidget));
+                    GenericWidgets.Add(new GenericWidget(textboxWidget));
                     break;
                 case RectangleWidget rectangleWidget:
-                    _genericWidgets.Add(new GenericWidget(rectangleWidget));
+                    GenericWidgets.Add(new GenericWidget(rectangleWidget));
                     break;
                 case SquareWidget squareWidget:
-                    _genericWidgets.Add(new GenericWidget(squareWidget));
+                    GenericWidgets.Add(new GenericWidget(squareWidget));
                     break;
                 case EllipseWidget ellipseWidget:
-                    _genericWidgets.Add(new GenericWidget(ellipseWidget));
+                    GenericWidgets.Add(new GenericWidget(ellipseWidget));
                     break;
                 case CircleWidget circleWidget:
-                    _genericWidgets.Add(new GenericWidget(circleWidget));
+                    GenericWidgets.Add(new GenericWidget(circleWidget));
                     break;          
                 default:
                     throw new KeyNotFoundException($"Selected widget is not in the acceptable lists of widgets");
@@ -38,7 +38,7 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
 
         public IEnumerable<string> GetDescriptions()
         {
-            return _genericWidgets.Select(x => x.Widget.GetDescription());
+            return GenericWidgets.Select(x => x.Widget.GetDescription());
         }
     }
 }
