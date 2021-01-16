@@ -1,6 +1,12 @@
 # SpreadEx-Shapes-WillW
 Coding exercise for SpreadEx
 
+## Running program:
+Set Shapes.Application as Startup project or just hit run on Program.cs
+
+## Running Tests:
+Right click on Shapes.Bll.UnitTests and run tests on the assembly
+
 ## Design Decisions:
 
 
