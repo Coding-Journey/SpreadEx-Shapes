@@ -29,6 +29,15 @@ namespace SpreadEx_Shapes_WillW.UnitTests.Widgets
                 $"A Circle requires its unitName unit to be positive, currently it is {unit}", exception.Message);
         }
 
+        [Test]
+        public void TestGetUnitAndCheckPositive()
+        {
+            var widgetTestClass = new WidgetTestClass(new Point(1, 2));
+            var unit = widgetTestClass.GetUnitAndCheckPositive(1, "unitName");
+
+            Assert.AreEqual(1, unit);
+        }
+
         private class WidgetTestClass : WidgetBaseClass
         {
             public new readonly WidgetType Type = WidgetType.Circle;

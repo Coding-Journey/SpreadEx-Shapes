@@ -14,16 +14,16 @@ namespace SpreadEx_Shapes_WillW
 
             Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine("------------------------- Will Wright --------------------------");
-            Console.WriteLine("--------------------------- Web Dev ----------------------------");
             Console.WriteLine("------------------- SpreadEx Coding Exercise -------------------");
             Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine("Requested Drawing");
             Console.WriteLine("----------------------------------------------------------------");
             descriptions.ForEach(desc => Console.WriteLine(desc));
             Console.WriteLine("----------------------------------------------------------------");
             
-
             Console.ReadKey();
         }
 

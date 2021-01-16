@@ -3,15 +3,6 @@ using System.Drawing;
 
 namespace SpreadEx_Shapes_WillW.BLL.Widgets
 {
-    public enum WidgetType
-    {
-        Circle,
-        Ellipse,
-        Rectangle,
-        Square,
-        Textbox
-    }
-
     public abstract class WidgetBaseClass
     {
         public virtual WidgetType Type { get; }
