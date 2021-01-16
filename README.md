@@ -29,37 +29,29 @@ having our business logic in another assembly has made the code clean and testab
   - Adds items to WidgetCollection
   - Displays descriptions of Widgets through console logging
   
- - Shapes.BLL (Back-End Business Logic)
+- Shapes.BLL (Back-End Business Logic)
   - Widgets
-   - WidgetType
-    - Enum storing Widget Types e.g. WidgetType.Circle
-   - WidgetBaseClass
+    - WidgetType
+      -Enum storing Widget Types e.g. WidgetType.Circle
+  - WidgetBaseClass
     - BaseClass for all widgets
     - Overridable properties for common asbects of widgets
     - GetLocationString() Func that formats a System.Drawing.Point into the "(x,y)" point format requested
     - GetDescription() overridable Func that formats the shapes properties into a nice string, very useful when pulling out descriptions effortlessly from a list of shapes
-   
-   (inherit base class):
-   -CircleWidget
-   -EllipseWidget
-   -RectangleWidget
-   -SquareWidget
-   -TextboxWidget
-  
+    - inherits base class: CircleWidget, EllipseWidget, RectangleWidget, SquareWidget, TextboxWidget
   - WidgetHelpers
     - GenericWidget
-      -Wrapper class for 
+      -Wrapper class for storing any widget that inherits WidgetBaseClass
     - WidgetCollection
       -Stores list of widgets (drawing)
       -handles adding of widgets
       -provides method to GetDescriptions of all widgets in our drawing
-      
   - OutOfBoundUnitException
     - Thrown when width, height or diameter is set but the value isn't positive
       
  - Shapes.BLL.UnitTests (Back-End UnitTests)
-  - WidgetCollectiontests
-    -tests adding of widgets and collating of descriptions
-  - WidgetBaseClassTests
-    -tests GetUnitAndCheckPositive func throws the correct exception or returns int
-    -tests GetLocationString func works as intended
+   - WidgetCollectiontests
+     - tests adding of widgets and collating of descriptions
+   - WidgetBaseClassTests
+     - tests GetUnitAndCheckPositive func throws the correct exception or returns int
+     - tests GetLocationString func works as intended
