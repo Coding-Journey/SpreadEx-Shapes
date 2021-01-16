@@ -5,14 +5,13 @@ namespace SpreadEx_Shapes_WillW.BLL.Widgets
 {
     public class CircleWidget : WidgetBaseClass
     {
-        public override WidgetType Type => WidgetType.Circle;
-        public override Point Location { get; set; }
         public int Size { get; set; }
+        public override WidgetType Type { get => WidgetType.Circle; }
         public override Func<string> GetDescription => () => $"{Type} {GetLocationString()} size={Size}";
 
-        public CircleWidget(Point location, int size)
+        public CircleWidget(Point location, int size) 
+            : base(location)
         {
-            Location = location;
             Size = GetUnitAndCheckPositive(size, nameof(size));
         }
     }
